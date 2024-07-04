@@ -16,7 +16,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      docName="draft-andersson-netmod-yang-module-filename-latest"
-     category="std"
+     category="exp"
      consensus="true"
      updates="6020, 7950, 8407"
      ipr="trust200902">
@@ -46,7 +46,7 @@
     </abstract>
 
     <note title="Editorial note (To be removed by the RFC Editor)">
-      <t>In the YANG module versionining work it was previously defined in
+      <t>In the YANG module versioning work it was previously defined in
         <xref target="I-D.ietf-netmod-yang-semver"/> that file names
         could use the revision label (YANG Semantic version extension) instead
         of the revision date, which is standardized in <xref target="RFC7950"/>.
@@ -69,17 +69,19 @@
           The motivation for using YANG semantic version instead of revision
           date is that it carries information to the user. A revision date only
           tells the user that it has been updated, while, for instance, a YANG
-          Semver version can tell the user about the modules compatibility level
-          at a glance. Having this information available as early as possible,
-          i.e. in the module file name, makes it possible to quickly identify
-          the module revision; compared to searching in the file contents and
-          checking the revisions. Having the YANG semantic version visible in
-          the file name will make it easier to handle large sets of YANG modules.
+          Semver version can tell the user about the module's compatibility
+          level at a glance. Having this information available as early as
+          possible, i.e. in the module file name, makes it possible to quickly
+          identify the module revision; compared to searching in the file
+          contents and checking the revisions. Having the YANG semantic version
+          visible in the file name will make it easier to handle large sets of
+          YANG modules.
         </t>
         <t>
           The YANG module file name schema described in this draft is already
           deployed in the industry. Now is the time to standardize before
-          several proprietary solutions emerges.
+          several proprietary solutions emerge. One possibility is to propose a
+          standard that gains operational experience.
         </t>
         <t>
           It is relatively easy to update tooling to handle YANG semantic
@@ -112,6 +114,12 @@
         </figure>
         E.g., acme-router-module@2024-05-15.yang or
         acme&nbhy;router&nbhy;module#2.0.3.yang.
+      </t>
+
+      <t>
+        In short, the YANG semantic version is recommended in order to simplify
+        for module consumers, i.e. to convey compatibility status without
+        needing to read the module.
       </t>
 
       <t>
@@ -155,6 +163,25 @@
           </figure>
         </t>
       </section>
+
+      <section title="Known incompatibilities">
+        <t>
+          There are currently no known publicly available tools that support
+          the YANG semantic version file name schema. There are known
+          proprietary tooling that already uses the file name schema presented
+          in this document.
+        </t>
+        <t>
+          At the IETF 119 Hackathon, there was a project that investigated
+          the feasibility to modify popular YANG tooling to support the proposed
+          schema. There was a successful attempt to modify pyang to support the
+          file name schema and also "recommended-min" previously included in
+          <xref target="I-D.ietf-netmod-yang-module-versioning"/>. Furthermore,
+          there were efforts in researching yanger and libyang to support the
+          schema, but the hackathon ended before these projects could be
+          concluded.
+        </t>
+      </section>
     </section>
 
     <section anchor="security" title="Security Considerations">
@@ -174,5 +201,12 @@
     </references>
     <references title="Informative References">
     </references>
+
+    <section title="Acknowledgements" numbered="no">
+      <t>
+        The author would like to thank Joe Clarke for excellent technical
+        reviews, support, and guidance.
+      </t>
+    </section>
   </back>
 </rfc>
