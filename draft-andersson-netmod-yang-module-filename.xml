@@ -39,8 +39,8 @@
 
     <abstract>
       <t>This document presents YANG module file name convention. The convention
-        extends the current YANG module file name using revision-date, with the
-        YANG semantic version extension. The YANG semantic version extension
+        extends the current YANG module file name using revision&nbhy;date, with
+        the YANG semantic version extension. The YANG semantic version extension
         allows for an informative version to be associated with a particular
         YANG module revision.</t>
     </abstract>
@@ -111,7 +111,7 @@
           </artwork>
         </figure>
         E.g., acme-router-module@2024-05-15.yang or
-        acme-router-module#2.0.3.yang.
+        acme&nbhy;router&nbhy;module#2.0.3.yang.
       </t>
 
       <t>
