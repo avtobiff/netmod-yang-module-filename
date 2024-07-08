@@ -101,9 +101,8 @@
 
       <t>
         If a revision has an associated YANG semantic version (ys:version)
-        then it is RECOMMENDED that the YANG semantic version is used instead of
-        the revision date in the file name of a YANG file, where it takes the
-        form:
+        then it MAY use the YANG semantic version instead of the revision date
+        in the file name of a YANG file, where it takes the form:
         <figure align="center" anchor="filename" suppress-title="true">
           <artwork align="left" name="filename-abnf">
 <![CDATA[
@@ -204,8 +203,8 @@
 
     <section title="Acknowledgements" numbered="no">
       <t>
-        The author would like to thank Joe Clarke for excellent technical
-        reviews, support, and guidance.
+        The author would like to thank Joe Clarke, Reshad Rahman, for their
+        excellent technical reviews, support, and guidance.
       </t>
     </section>
   </back>
